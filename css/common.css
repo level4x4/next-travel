@@ -1,0 +1,97 @@
+html, body {height: 100%;}
+
+body {background: #f7f8f7 /*url(../images/bg-body.jpg) repeat 0 0*/;}
+
+.container {width: 995px; padding: 0;}
+
+.nt-wraper {height: auto;}
+.nt-bg-container {background: url(../images/bg.jpg) no-repeat center 106px; width: 100%; height: 100%;}
+
+._position_relative {position: relative;}
+.nt-line {background-color: #dcdcdc; width: 100%; height: 1px;}
+
+.nt-header-contact-container {background-color: #ffffff; height: 34px; width: 100%;}
+.nt-social-container {list-style: none; margin-bottom: 0;}
+.nt-social-container li {display: inline-block; margin: 7px 0 0 11px;}
+.nt-social-icon {display: inline-block; width: 19px; height: 19px; background: url(../images/social.png) no-repeat;}
+.nt-social-icon.nt-social-icon-vk {background-position: 0 0;}
+.nt-social-icon.nt-social-icon-ok {background-position: -19px 0;}
+.nt-social-icon.nt-social-icon-fb {background-position: -38px 0;}
+.nt-social-icon.nt-social-icon-gl {background-position: -57px 0;}
+.nt-social-icon.nt-social-icon-tw {background-position: -76px 0;}
+.nt-social-icon.nt-social-icon-vk:hover {background-position: 0 -19px;}
+.nt-social-icon.nt-social-icon-ok:hover {background-position: -19px -19px;}
+.nt-social-icon.nt-social-icon-fb:hover {background-position: -38px -19px;}
+.nt-social-icon.nt-social-icon-gl:hover {background-position: -57px -19px;}
+.nt-social-icon.nt-social-icon-tw:hover {background-position: -76px -19px;}
+
+.nt-address-container {font-size: 14px; font-family: Tahoma, Geneva, sans-serif; line-height: 32px; color: #4e4f52; margin-left: 70px; margin-right: 28px; margin-bottom: 0;}
+
+.nt-phones-container {position: relative; width: 201px;}
+.nt-phones-container ul {list-style: none; font-size: 18px; font-family: Tahoma, Geneva, sans-serif; line-height: 32px; width: 201px; padding: 0; height: 34px; overflow: hidden; color: #4e4f52; margin-bottom: 0; position: absolute; z-index: 100;}
+.nt-phones-container ul:hover {height: 106px; background-color: #4e4f52; color: #ffffff;}
+.nt-phones-container ul li {padding-left: 46px; cursor: pointer;}
+.nt-phone-icon {position: relative; cursor: pointer;}
+.nt-phone-icon:before {content: ""; display: inline-block; width: 15px; height: 19px; background: url(../images/sprite.png) no-repeat 0 0; position: absolute; left: 23px; top: 8px;}
+.nt-phone-icon:after {content: ""; display: block; width: 0; height: 0;  border-left: 5px solid transparent; border-right: 5px solid transparent; border-top: 7px solid #4e4f52; position: absolute; top: 15px; right: 23px;}
+.nt-phones-container ul:hover .nt-phone-icon:before {background-position: -15px 0;}
+.nt-phones-container ul:hover .nt-phone-icon:after {border-top: 0; border-bottom: 7px solid #ffffff;}
+
+.nt-nav-bar-container {background-color: #1f78b9; height: 72px; width: 100%;}
+.nt-logo-container {margin-top: 24px; margin-left: 15px;}
+.nt-header-menu-container {margin: 0; list-style: none;}
+.nt-header-menu-container > li {display: inline-block; float: left;}
+.nt-header-menu-container > li > a {display: block; line-height: 72px; height: 72px; font-size: 26px; color: #abc3d4; text-transform: uppercase; padding: 0 29px;}
+.nt-header-menu-container > li > a:hover {color: #abc3d4;}
+.nt-header-menu-container > li.active > a:hover,
+.nt-header-menu-container > li.active > a {background-color: #5ea1d1; color: #ffffff; text-decoration: none;}
+.nt-header-menu-container > li > ul {display: none;}
+.nt-header-menu-container > li.active > ul {display: block; list-style: none; background-color: #5ea1d1; position: absolute; left: 0; height: 41px; line-height: 41px; margin: 0;}
+.nt-header-menu-container > li.active > ul > li {display: inline-block; float: right; margin: 0 6px;}
+.nt-header-menu-container > li.active > ul > li a {color: #204865; font-size: 20px;}
+.nt-header-menu-container > li.active > ul > li a:hover {color: #ffffff; text-decoration: none;}
+
+.nt-content-container {background: #ffffff url(../images/content-border.png) repeat-x 0 0;}
+
+.nt-slider-container {background: transparent url(../images/bg-slider.png) no-repeat 0 0; height: 369px; width: 1040px; padding-top: 17px; position: relative;}
+.nt-slider {list-style: none; width: 700px; height: 330px; clear: both; overflow: hidden; background-color: #006699; margin: 0 0 0 27px; padding: 0;}
+.nt-slider li {float: left; position: relative;}
+
+.nt-slider-btn {position: absolute; height: 49px; line-height: 39px; padding: 0 31px;}
+.nt-btn-tukan {position: absolute; bottom: 49px; right: 89px; padding: 0 29px; height: 49px; line-height: 39px;}
+.nt-btn-tukan:before {content: ""; width: 92px; height: 65px; display: inline-block; background: transparent url(../images/sprite.png) no-repeat -56px 0; position: absolute; top: -63px; left: 0;}
+
+.nt-nav-slider {width: 28px; height: 28px; display: inline-block; background: transparent url(../images/sprite.png) no-repeat; position: absolute; bottom: 52px; cursor: pointer;}
+.nt-nav-slider.nt-nav-slider-prev {background-position: 0 -47px; left: 59px;}
+.nt-nav-slider.nt-nav-slider-next {background-position: -28px -47px; left: 99px;}
+.nt-nav-slider.nt-nav-slider-prev:hover {background-position: 0 -19px;}
+.nt-nav-slider.nt-nav-slider-next:hover {background-position: -28px -19px;}
+
+.nt-bestsellers-container {padding: 0 27px; margin-bottom: 26px;}
+.nt-tours-container {clear: both; overflow: hidden; margin: -10px -10px;}
+.nt-tour {float: left; position: relative; cursor: pointer; margin: 10px;}
+.nt-tour-content {position: absolute; top: 0; left: 0; width: 220px; height: 169px; border: 4px solid transparent;}
+.nt-tour:hover .nt-tour-content {border-color: #f13d0c;}
+.nt-hotel-info {background-color: rgba(255, 255, 255, 0.85); padding: 0 6px;}
+.nt-name-hotel {font-size: 12px; color: #4e4f52; font-family: Tahoma, Geneva, sans-serif; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin: 0;}
+.nt-stars-hotel {list-style: none; padding: 0; margin: 2px 0 0 0; height: 7px; line-height: 7px;}
+.nt-stars-hotel li {display: inline-block; background: url(../images/sprite.png) no-repeat -30px 0; width: 7px; height: 7px; line-height: 7px;}
+.nt-stars-hotel li.active {background-position: -30px -7px;}
+.nt-date-tour {font-family: Tahoma, Geneva, sans-serif; font-size: 10px; color: #4e4f52; margin: 0;}
+.nt-description-tour {position: absolute; bottom: 0; left: 0; right: 0; text-align: right;}
+.nt-price-tour {background-color: rgba(255, 255, 255, 0.85); border-radius: 4px 4px 0 0; margin-bottom: 0; display: inline-block; padding: 0 12px; font-size: 24px; height: 30px; color: #f13d0c;}
+.nt-country-tour {background-color: rgba(255, 255, 255, 0.85); text-align: left; margin: 0; font-weight: bold; font-family: Tahoma, Geneva, sans-serif; font-size: 14px; line-height: 29px; height: 29px; padding-left: 6px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;}
+
+.nt-title {text-transform: uppercase; font-weight: normal; font-size: 30px; color: #3f7eb7;}
+
+.nt-h-footer {height: 164px; width: 100%;}
+.nt-footer {height: 164px; width: 100%; margin-top: -164px; background-color: #158fcc;}
+
+.nt-btn {border-radius: 0; border-width: 3px; font-size: 25px; font-family: Tahoma, Geneva, sans-serif;}
+.nt-btn-white {background-color: #ffffff; border-color: #f13d0c; color: #f13d0c;}
+.nt-btn-white:focus,
+.nt-btn-white:hover {background-color: #f13d0c; border-color: #ffffff; color: #ffffff;}
+
+.nt-btn-red {background-color: #f13d0c; border-color: #ffffff; color: #ffffff}
+.nt-btn-red:focus,
+.nt-btn-red:hover {background-color: #c92c01; color: #ffffff;}
