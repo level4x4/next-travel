@@ -10,7 +10,16 @@
 		ntHeaderMenuContainer: 'nt-header-menu-container',
 		ntHeaderSubMenu: 'nt-header-sub-menu',
 		ntSubMenuTempContainer: 'nt-sub-menu-temp-container',
-		ntGismeteoWidgetConatiner: 'nt-gismeteo-widget-conatiner'
+		ntGismeteoWidgetContainer: 'nt-gismeteo-widget-container',
+
+		ntSubscribeEmailNewsletter: 'nt-subscribe-email-newsletter',
+		ntSubscribeEmailNewsletterContainer: 'nt-subscribe-email-newsletter-container',
+		ntNewsletterContainerEmail: 'nt-newsletter-container__email',
+		ntNewsletterContainerName: 'nt-newsletter-container__name',
+		ntNewsletterContainerBtn: 'nt-newsletter-container__btn',
+		ntNewsletterContainerType: 'nt-newsletter-container__type',
+
+		displayNone: '_display_none'
 	};
 
 	var ids = {
@@ -39,10 +48,20 @@
 
 	var indexHeaderSubMenu,
 		$ntHeaderMenuElement,
+		$ntNewsletterContainerEmail,
+		$ntNewsletterContainerName,
+		$ntNewsletterContainerBtn,
+		$ntNewsletterContainerType,
+		$ntSubscribeEmailNewsletter,
 		$ntHeaderSubMenu;
 
 	$(function(){
 		$ntHeaderMenuElement = $(selectors.ntHeaderMenuContainer).find('li');
+		$ntNewsletterContainerEmail = $(selectors.ntNewsletterContainerEmail);
+		$ntNewsletterContainerName = $(selectors.ntNewsletterContainerName);
+		$ntNewsletterContainerBtn = $(selectors.ntNewsletterContainerBtn);
+		$ntNewsletterContainerType = $(selectors.ntNewsletterContainerType);
+		$ntSubscribeEmailNewsletter = $(selectors.ntSubscribeEmailNewsletter);
 		$ntHeaderSubMenu = $(selectors.ntHeaderSubMenu);
 
 		$ntHeaderMenuElement.on('click', function(e){
@@ -68,6 +87,35 @@
 			}
 		});
 
+		$ntSubscribeEmailNewsletter.on('click', function(){
+			$(selectors.ntSubscribeEmailNewsletterContainer).removeClass(classNames.displayNone);
+			$(this).addClass(classNames.displayNone);
+			return false;
+		});
+
+		$ntNewsletterContainerBtn.on('click', function(){
+			$.ajax({
+				url: '',
+				method: 'POST',
+				data: {
+					email: $ntNewsletterContainerEmail.val(),
+					name: $ntNewsletterContainerName.val(),
+					type: $ntNewsletterContainerType.val()
+				}
+			}).done(function(){
+				$(selectors.ntSubscribeEmailNewsletterContainer).addClass(classNames.displayNone);
+				$ntSubscribeEmailNewsletter.removeClass(classNames.displayNone);
+			}).fail(function(){
+				console.log('Unknown error')
+			});
+		});
+
+		$ntNewsletterContainerEmail.on('propertychange input', function(){
+			subscribeEmailNewsletter($(this));
+		});
+
+		subscribeEmailNewsletter($ntNewsletterContainerEmail);
+
 		$.getScript('js/slider.js').done(function(){
 			$(selectors.ntSliderContainer).slider({
 				btnNext: '.nt-nav-slider-next',
@@ -76,7 +124,7 @@
 		}).fail(function(){
 			console.log('Fail load file slider.js');
 		});
-		if ($(selectors.ntGismeteoWidgetConatiner).exists()) {
+		if ($(selectors.ntGismeteoWidgetContainer).exists()) {
 			$.getScript('js/widget_partner.js').done(function () {
 				console.log('Load file widget_partner.js');
 			}).fail(function () {
@@ -84,4 +132,32 @@
 			});
 		}
 	});
+
+	var subscribeEmailNewsletter = function($_this){
+		var regMail = /^([a-zA-Z0-9_\.-]+)@([a-zA-Z0-9_\.-]+)\.([a-z\.]{2,6})$/,
+			value = $_this.val();
+		if (regMail.test(value)) {
+			$.ajax({
+				url: '',
+				method: 'POST',
+				data: {mail: value}
+			}).done(function(data){
+				$ntNewsletterContainerBtn.prop('disabled', false);
+				$ntNewsletterContainerName.prop('disabled', false);
+				if (data.isMail) {
+					$ntNewsletterContainerName.val(data.name);
+					$ntNewsletterContainerType.val('remove');
+					$ntNewsletterContainerBtn.text('Отписаться');
+				} else {
+					$ntNewsletterContainerType.val('add');
+					$ntNewsletterContainerBtn.text('Подписаться');
+				}
+			}).fail(function(){
+				console.log('Unknown error')
+			});
+		} else {
+			$ntNewsletterContainerName.prop('disabled', true);
+			$ntNewsletterContainerBtn.prop('disabled', true);
+		}
+	};
 })();

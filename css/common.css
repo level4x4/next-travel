@@ -80,6 +80,7 @@ a:focus {outline: none; cursor: pointer;}
 
 .nt-recommended-container,
 .nt-widgets-container,
+.nt-footer-container,
 .nt-bestsellers-container {padding: 0 27px; margin-bottom: 26px;}
 
 .nt-tours-container {clear: both; overflow: hidden; margin: -10px -10px;}
@@ -112,6 +113,16 @@ a:focus {outline: none; cursor: pointer;}
 
 .nt-h-footer {height: 164px; width: 100%;}
 .nt-footer {height: 164px; width: 100%; margin-top: -164px; background-color: #158fcc;}
+.nt-footer-container {position: relative;}
+.nt-logo-footer {margin-top: 42px;}
+.nt-subscribe-email-newsletter,
+.nt-subscribe-email-newsletter:focus {color: #ffffff; position: relative; text-decoration: underline; padding-left: 37px; line-height: 18px;}
+.nt-subscribe-email-newsletter:hover {color: #ffffff; text-decoration: none;}
+.nt-subscribe-email-newsletter:before {content: ""; display: block; width: 24px; height: 18px; background: transparent url(../images/sprite.png) no-repeat 0 -75px; position: absolute; left: 0; top: 0;}
+.nt-delivery-container {margin-top: 73px; margin-left: 246px;}
+
+.nt-exchange-rate {position: absolute; color: #a9cfea; font-size: 14px; font-family: 'Proxima-Nova-Condensed-Regular'; right: 27px; top: 20px;}
+.nt-exchange-rate p {margin: 0;}
 
 div#offer_of_the_day_content .nt-btn,
 .nt-btn {border-radius: 0; border-width: 3px; font-size: 25px; font-family: Tahoma, Geneva, sans-serif;}
@@ -121,6 +132,10 @@ div#offer_of_the_day_content .nt-btn-white:focus,
 div#offer_of_the_day_content .nt-btn-white:hover,
 .nt-btn-white:focus,
 .nt-btn-white:hover {background-color: #f13d0c; color: #ffffff;}
+
+.nt-subscribe-email-newsletter-container .nt-btn {height: 33px; line-height: 26px; font-size: 14px; padding: 0 27px; margin-top: -3px;}
+.nt-subscribe-email-newsletter-container input {padding: 2px 10px; margin-right: 15px; width: 178px;}
+/*.nt-subscribe-email-newsletter-container input:disabled {background-color: #fafafa;}*/
 
 div#offer_of_the_day_content .nt-btn {font-size: 16px; padding: 0 16px; height: 27px; line-height: 20px; margin-top: -38px; position: relative; z-index: 10;}
 
