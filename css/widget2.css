@@ -1,0 +1,325 @@
+@CHARSET "UTF-8";
+
+/* main setup */
+div#offer_of_the_day *{
+	color: #3e3e3e;
+	margin:0; padding:0;
+	font: 15px Arial, Helvetica, sans-serif;
+}
+
+/* navi titles */
+div#offer_of_the_day_type div, div#offer_of_the_day_navi div{
+	font-weight: bold;
+	padding: 0px 10px;
+}
+
+div#offer_of_the_day_type{
+	background-color: #398fc7;
+	border-top: 2px solid #4bb4e8; 
+}
+
+/* ============== navi elements ============= */
+/* type */
+div#offer_of_the_day_type ul {
+	margin: -2px 0 0 0;
+	list-style: none;
+}
+
+div#offer_of_the_day_type ul li{
+	display: inline-block;
+	padding: 10px 10px;
+	font-size: 14px; 
+	margin: 0px 1px;
+}
+
+div#offer_of_the_day_type ul li.link{
+	cursor: pointer;
+	color: #fff;
+	text-decoration: underline;
+	border: 0px;
+}
+
+div#offer_of_the_day_type ul li.selected{
+	border-top: 2px solid #FF9900;
+	cursor: default;
+	color: #3e3e3e;
+	background-color: #fff;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+/* filters */
+
+
+div#offer_of_the_day_navi ul{
+	/*line-height: 33px;*/
+	list-style: none;
+}
+
+div#offer_of_the_day_navi ul li{
+	display: inline-block;
+	padding: 7px 5px;
+	font-size: 14px; 
+	margin: 3px 3px 3px 0px;
+}
+
+div#offer_of_the_day_navi ul li.link, div#offer_of_the_day_filters ul li.link{
+	cursor: pointer;
+	color: #00adee;
+	text-decoration: underline;
+	border: 0px; 
+}
+
+div#offer_of_the_day_navi ul li.selected2, div#offer_of_the_day_filters ul li.selected2{
+	cursor: default;
+	color: #fff;
+	background-color: #398fc7;
+	text-decoration: none;
+	
+	-webkit-border-radius: .2em; 
+	-moz-border-radius: .2em;
+	border-radius: .2em; 
+}
+
+/* ---------------- */
+div#offer_of_the_day_navi {
+	
+	overflow:hidden;
+	padding: 10px 0;
+	border-bottom: 1px solid #C0C0C0;
+}
+
+div#offer_of_the_day_navi div.ootd_menu_block {
+	float: left;
+	padding: 5px 10px 5px 0; 
+}
+
+/* div#offer_of_the_day_navi div.ootd_menu_sort {
+	border-right: 1px solid #00adee;
+	padding: 5px 10px 5px 0;
+}
+
+div#offer_of_the_day_navi div.ootd_menu_currency {
+	padding: 5px 20px 5px 10px;
+} */
+
+div#offer_of_the_day_navi div.ootd_menu_block div.ootd_menu_title{
+	font-size: 85%;
+	color: #3d6b9c !important;
+	margin: 0;
+	padding: 0 0 10px 0 !important;
+}
+
+div#offer_of_the_day_navi .styled-select select {
+   background: transparent;
+   padding: 5px 20px 5px 5px;
+   font-size: 14px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+   }
+
+div#offer_of_the_day_navi .styled-select {
+   	height: 34px;
+  	overflow: hidden;
+  	background: url(/img/arrow-down.png) no-repeat right #fff;
+   	display: inline-block;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #333;
+	padding: 0px;
+	border: 1px solid #bbb;
+	outline: none;
+	vertical-align: middle;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+   }
+
+
+/* content */
+div#offer_of_the_day_content div#offer_of_the_day_filters{
+	padding-bottom: 10px;
+	border-bottom: 1px solid #FAFAFA;
+}
+
+div#offer_of_the_day_content a {
+	color: #0055cc;
+}
+
+div#offer_of_the_day_content div.message{
+	padding: 10px;
+}
+
+/* item data */
+
+div#offer_of_the_day_content div.photo{
+	border:2px #FAFAFA solid; background-repeat: no-repeat; background-size: cover; background-position: 50% 50%; width:140px; height:90px;
+	
+	margin-right: 15px;
+	float: left;
+}
+ 
+div#offer_of_the_day_content div.photo:hover{
+	border: 2px solid #00adee !important;
+	cursor: pointer;
+}
+
+div#offer_of_the_day_content div.item{
+	padding: 15px 0;
+	border-bottom: 1px solid #FAFAFA;
+}
+
+div#offer_of_the_day_content div.item_data{
+	overflow:hidden
+}
+
+/* title block */
+div#offer_of_the_day_content div.item_data div.title{
+
+}
+
+div#offer_of_the_day_content div.item_data div.title span{
+	color: #4e4f52;
+	font-size: 12px;
+	/*C1C1C1*/
+}
+
+div#offer_of_the_day_content div.item_data div.title a{
+	font-family: 'Proxima-Nova-Condensed-Regular';
+	text-decoration: underline;
+	font-size: 24px;
+	color: #3f7eb7;
+}
+
+div#offer_of_the_day_content div.item_data div.title a:hover{
+	text-decoration: none;
+}
+
+/* price block */
+div#offer_of_the_day_content div.item_data div.description_short{
+	position: relative;
+	padding: 2px 0 4px 0;
+}
+
+div#offer_of_the_day_content div.item_data div.description_short img{
+	vertical-align:middle;
+}
+
+div#offer_of_the_day_content div.item_data div.description_short div.travel_nigths, div#offer_of_the_day_content div.item_data div.description_short div.travel_info{
+	font-size: 80%;
+	text-align: right;
+}
+
+div#offer_of_the_day_content div.item_data div.description_short div.price{
+	position: absolute;
+	left: 138px;
+	top: 5px;
+	font-family: Tahoma, Geneva, sans-serif;
+	/*border: 1px solid #FF9900;*/ 
+	padding: 12px;
+}
+
+div#offer_of_the_day_content div.item_data div.description_short div.price .number{
+	color: #f13d0c;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+div#offer_of_the_day_content div.item_data div.description_short div.price .currency{
+	color: #f13d0c;
+}
+
+div#offer_of_the_day_content div.item_data div.description_short div.price .travel{
+	padding: 5px 0;
+	color: #ADADAD;
+	/*C1C1C1*/
+}
+
+
+/* action block */
+div#offer_of_the_day_content div.item_data div.action{
+	
+}
+
+div#offer_of_the_day_content div.item_data div.action .ootd_details{
+	
+	margin-left: 10px;
+	text-decoration: none;
+}
+
+div#offer_of_the_day_content div.item_data div.action .ootd_details span{
+	border-bottom: 1px #0055cc dotted; 
+	color: #0055cc !important;
+}
+
+/* hiden desc block */
+div#offer_of_the_day_content div.item_data div.ootd_description{
+	padding: 15px 0;
+}
+
+div#offer_of_the_day_content div.item_data div.ootd_description span{
+	font-weight: bold;
+}
+
+div#offer_of_the_day_content div.item_data div.ootd_description p{
+	padding: 0 0 3px 0;
+}
+
+.gray {
+	color: #afafaf;
+	background: -webkit-gradient(linear, left top, left bottom, from(#575757), to(#888));
+	background: -moz-linear-gradient(top, #575757, #888);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#575757', endColorstr='#888888');
+}
+
+div#offer_of_the_day_content .order_button:hover {
+	text-decoration: none;
+}
+div#offer_of_the_day_content .order_button:active {
+	position: relative;
+	top: 1px;
+}
+
+div#offer_of_the_day_content div.ootd_description{
+	font-size: 14px;
+	padding-top: 5px;
+	clear: both;
+}
+
+/* page navi */
+
+div#offer_of_the_day_content div.ootd_pages{
+	text-align: center;
+}
+
+div#offer_of_the_day_content ul.pages{
+	padding: 10px 0 0 0;
+	line-height: 33px;
+	list-style: none;
+}
+
+div#offer_of_the_day_content ul.pages li{
+	display: inline-block;
+	font-size: 14px;
+	margin-right: 7px;
+	padding: 3px 6px;
+}
+
+div#offer_of_the_day_content ul.pages li.page{
+	cursor: pointer;
+	color: #526aa6;
+	text-decoration: underline;
+}
+
+div#offer_of_the_day_content ul.pages li.curent{
+	cursor: default;
+	color: #666666;
+	background-color: #e5eef2;
+	border: 2px solid #91adb8;
+	font-weight: bold;
+	text-decoration: none;
+	
+}
