@@ -10,7 +10,7 @@
 		ntHeaderMenuContainer: 'nt-header-menu-container',
 		ntHeaderSubMenu: 'nt-header-sub-menu',
 		ntSubMenuTempContainer: 'nt-sub-menu-temp-container',
-		ntGismeteoWidgetContainer: 'nt-gismeteo-widget-container',
+		ntPartnerContainer: 'nt-partner-container',
 
 		ntSubscribeEmailNewsletter: 'nt-subscribe-email-newsletter',
 		ntSubscribeEmailNewsletterContainer: 'nt-subscribe-email-newsletter-container',
@@ -124,7 +124,7 @@
 		}).fail(function(){
 			console.log('Fail load file slider.js');
 		});
-		if ($(selectors.ntGismeteoWidgetContainer).exists()) {
+		if ($(selectors.ntPartnerContainer).exists()) {
 			$.getScript('js/widget_partner.js').done(function () {
 				console.log('Load file widget_partner.js');
 			}).fail(function () {

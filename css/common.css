@@ -106,6 +106,8 @@ a:focus {outline: none; cursor: pointer;}
 .nt-banner-slider li a:hover {background-color: #fafafa;}
 .nt-banner-slider li a:hover span {text-decoration: underline;}
 
+.nt-nav-banner-slider {}
+
 .nt-partner-container {width: 700px;}
 .nt-fb-widget-container,
 .nt-vk-widget-container,
