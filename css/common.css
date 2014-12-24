@@ -152,7 +152,7 @@ div#offer_of_the_day_content .nt-btn {font-size: 16px; padding: 0 16px; height: 
 .nt-btn-tukan {position: absolute; bottom: 49px; right: 89px; padding: 0 29px; height: 49px; line-height: 39px; font-size: 25px;}
 .nt-btn-tukan:before {content: ""; width: 92px; height: 65px; display: inline-block; background: transparent url(../images/sprite.png) no-repeat -56px 0; position: absolute; top: -63px; left: 0;}
 
-.nt-form {margin-left: 40px; margin-bottom: 30px;}
+.nt-form {margin-left: 40px; margin-bottom: 30px; margin-top: 30px;}
 .nt-form-control {border-radius: 0; border-color: #b1b1b1;}
 .nt-form .nt-form-control {width: 298px; resize: none;}
 .nt-form__registration-label label {width: 300px; clear: both;}
