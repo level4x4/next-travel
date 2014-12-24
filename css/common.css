@@ -2,7 +2,7 @@
 
 html, body {height: 100%;}
 
-body {background: #f7f8f7 /*url(../images/bg-body.jpg) repeat 0 0*/;}
+body {background: #f7f8f7 /*url(../images/bg-body.jpg) repeat 0 0*/; color: #4e4f52; font-family: Tahoma, Geneva, sans-serif;}
 
 a,
 a:focus {outline: none; cursor: pointer; color: #f13d0c; text-decoration: underline;}
@@ -15,6 +15,7 @@ a:focus {outline: none; cursor: pointer; color: #f13d0c; text-decoration: underl
 ._display_none {display: none;}
 ._position_relative {position: relative;}
 ._color_red {color: #f13d0c;}
+._list-style_none {list-style: none;}
 
 .nt-line {background-color: #dcdcdc; width: 100%; height: 1px;}
 
@@ -68,10 +69,6 @@ a:focus {outline: none; cursor: pointer; color: #f13d0c; text-decoration: underl
 .nt-slider {width: 700px; height: 330px; overflow: hidden; margin: 0 0 0 27px; padding: 0;}
 .nt-slider-content {list-style: none; width: 9999px; clear: both; padding: 0;}
 .nt-slider li {float: left; position: relative;}
-
-.nt-slider-btn {position: absolute; height: 49px; line-height: 39px; padding: 0 31px;}
-.nt-btn-tukan {position: absolute; bottom: 49px; right: 89px; padding: 0 29px; height: 49px; line-height: 39px;}
-.nt-btn-tukan:before {content: ""; width: 92px; height: 65px; display: inline-block; background: transparent url(../images/sprite.png) no-repeat -56px 0; position: absolute; top: -63px; left: 0;}
 
 .nt-nav-slider {width: 28px; height: 28px; display: inline-block; background: transparent url(../images/sprite.png) no-repeat; position: absolute; bottom: 52px; cursor: pointer;}
 .nt-nav-slider.nt-nav-slider-prev {background-position: 0 -47px; left: 59px;}
@@ -133,7 +130,7 @@ a:focus {outline: none; cursor: pointer; color: #f13d0c; text-decoration: underl
 .nt-exchange-rate p {margin: 0;}
 
 div#offer_of_the_day_content .nt-btn,
-.nt-btn {border-radius: 0; border-width: 3px; font-size: 25px; font-family: Tahoma, Geneva, sans-serif;}
+.nt-btn {border-radius: 0; border-width: 3px; font-size: 20px; font-family: Tahoma, Geneva, sans-serif; padding: 0 24px; height: 40px; text-decoration: none;}
 div#offer_of_the_day_content .nt-btn-white,
 .nt-btn-white {background-color: #ffffff; border-color: #f13d0c; color: #f13d0c;}
 div#offer_of_the_day_content .nt-btn-white:focus,
@@ -151,9 +148,17 @@ div#offer_of_the_day_content .nt-btn {font-size: 16px; padding: 0 16px; height: 
 .nt-btn-red:focus,
 .nt-btn-red:hover {background-color: #c92c01; color: #ffffff;}
 
-.nt-form-control {border-radius: 0;}
-.nt-form input[type=text] {width: 298px;}
+.nt-slider-btn {position: absolute; height: 49px; line-height: 39px; padding: 0 31px; font-size: 25px;}
+.nt-btn-tukan {position: absolute; bottom: 49px; right: 89px; padding: 0 29px; height: 49px; line-height: 39px; font-size: 25px;}
+.nt-btn-tukan:before {content: ""; width: 92px; height: 65px; display: inline-block; background: transparent url(../images/sprite.png) no-repeat -56px 0; position: absolute; top: -63px; left: 0;}
+
+.nt-form {margin-left: 40px; margin-bottom: 30px;}
+.nt-form-control {border-radius: 0; border-color: #b1b1b1;}
+.nt-form .nt-form-control {width: 298px; resize: none;}
 .nt-form__registration-label label {width: 300px; clear: both;}
 .nt-form__registration-label label span {text-align: right; display: inline-block; float: right;}
+
+.nt-list-insurance {line-height: 24px;}
+.nt-list-insurance li:before {content: "— ";}
 
 .gsInformer .gsLinks {overflow: inherit;}
