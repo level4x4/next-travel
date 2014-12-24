@@ -53,37 +53,45 @@
 		$ntNewsletterContainerBtn,
 		$ntNewsletterContainerType,
 		$ntSubscribeEmailNewsletter,
+		$ntSubMenuTempContainer,
 		$ntHeaderSubMenu;
 
 	$(function(){
-		$ntHeaderMenuElement = $(selectors.ntHeaderMenuContainer).find('li');
+		$ntHeaderMenuElement = $(selectors.ntHeaderMenuContainer).find('> li');
 		$ntNewsletterContainerEmail = $(selectors.ntNewsletterContainerEmail);
 		$ntNewsletterContainerName = $(selectors.ntNewsletterContainerName);
 		$ntNewsletterContainerBtn = $(selectors.ntNewsletterContainerBtn);
 		$ntNewsletterContainerType = $(selectors.ntNewsletterContainerType);
 		$ntSubscribeEmailNewsletter = $(selectors.ntSubscribeEmailNewsletter);
 		$ntHeaderSubMenu = $(selectors.ntHeaderSubMenu);
+		$ntSubMenuTempContainer = $(selectors.ntSubMenuTempContainer);
+
+		$ntHeaderMenuElement.each(function(){
+			if ($(this).hasClass('active')) {
+				indexHeaderSubMenu = $(this).index() + 1;
+				return false;
+			}
+		});
 
 		$ntHeaderMenuElement.on('click', function(e){
-			var $this = $(this),
-				thisIndex;
+			var $this = $(this), thisIndex;
 			thisIndex = $this.index() + 1;
 			indexHeaderSubMenu = !indexHeaderSubMenu ? thisIndex : indexHeaderSubMenu;
 			if ($this.hasClass(classNames.ntHeaderSubMenu)) {
 				if (indexHeaderSubMenu === thisIndex) {
 					$this.toggleClass('active');
-					$(selectors.ntSubMenuTempContainer).toggleClass('_display_none');
+					$ntSubMenuTempContainer.toggleClass('_display_none');
 				} else {
 					indexHeaderSubMenu = thisIndex;
 					$ntHeaderMenuElement.removeClass('active');
 					$this.addClass('active');
-					$(selectors.ntSubMenuTempContainer).removeClass('_display_none');
+					$ntSubMenuTempContainer.removeClass('_display_none');
 				}
 			} else {
 				indexHeaderSubMenu = thisIndex;
 				$ntHeaderMenuElement.removeClass('active');
 				$this.addClass('active');
-				$(selectors.ntSubMenuTempContainer).addClass('_display_none');
+				$ntSubMenuTempContainer.addClass('_display_none');
 			}
 		});
 
@@ -113,6 +121,12 @@
 		$ntNewsletterContainerEmail.on('propertychange input', function(){
 			subscribeEmailNewsletter($(this));
 		});
+
+		if ($ntHeaderSubMenu.hasClass('active')) {
+			$ntSubMenuTempContainer.removeClass(classNames.displayNone);
+		} else {
+			$ntSubMenuTempContainer.addClass(classNames.displayNone);
+		}
 
 		subscribeEmailNewsletter($ntNewsletterContainerEmail);
 
