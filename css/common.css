@@ -151,4 +151,9 @@ div#offer_of_the_day_content .nt-btn {font-size: 16px; padding: 0 16px; height: 
 .nt-btn-red:focus,
 .nt-btn-red:hover {background-color: #c92c01; color: #ffffff;}
 
+.nt-form-control {border-radius: 0;}
+.nt-form input[type=text] {width: 298px;}
+.nt-form__registration-label label {width: 300px; clear: both;}
+.nt-form__registration-label label span {text-align: right; display: inline-block; float: right;}
+
 .gsInformer .gsLinks {overflow: inherit;}
