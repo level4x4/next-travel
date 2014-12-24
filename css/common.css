@@ -9,7 +9,7 @@ a:focus {outline: none; cursor: pointer;}
 
 .container {width: 995px; padding: 0;}
 
-.nt-wraper {height: auto;}
+.nt-wrapper {height: auto !important; min-height: 100%;}
 .nt-bg-container {background: url(../images/bg.jpg) no-repeat center 106px; width: 100%; height: 100%;}
 
 ._display_none {display: none;}
@@ -78,6 +78,7 @@ a:focus {outline: none; cursor: pointer;}
 .nt-nav-slider.nt-nav-slider-prev:hover {background-position: 0 -19px;}
 .nt-nav-slider.nt-nav-slider-next:hover {background-position: -28px -19px;}
 
+.nt-container,
 .nt-recommended-container,
 .nt-widgets-container,
 .nt-footer-container,
@@ -107,6 +108,10 @@ a:focus {outline: none; cursor: pointer;}
 .nt-banner-slider li a:hover span {text-decoration: underline;}
 
 .nt-nav-banner-slider {}
+
+.nt-left-container {width: 700px;}
+.nt-right-container {width: 224px;}
+.nt-right-tour-container {margin: 0 -10px;}
 
 .nt-partner-container {width: 700px;}
 .nt-fb-widget-container,
