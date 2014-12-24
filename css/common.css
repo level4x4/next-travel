@@ -5,7 +5,7 @@ html, body {height: 100%;}
 body {background: #f7f8f7 /*url(../images/bg-body.jpg) repeat 0 0*/;}
 
 a,
-a:focus {outline: none; cursor: pointer;}
+a:focus {outline: none; cursor: pointer; color: #f13d0c; text-decoration: underline;}
 
 .container {width: 995px; padding: 0;}
 
@@ -49,15 +49,16 @@ a:focus {outline: none; cursor: pointer;}
 .nt-logo-container {margin-top: 24px; margin-left: 15px;}
 .nt-header-menu-container {margin: 0; list-style: none;}
 .nt-header-menu-container > li {display: inline-block; float: left;}
-.nt-header-menu-container > li > a {display: block; line-height: 72px; height: 72px; font-size: 26px; color: #abc3d4; text-transform: uppercase; padding: 0 29px; font-family: 'Proxima-Nova-Condensed-Regular';}
-.nt-header-menu-container > li > a:hover {color: #abc3d4;}
+.nt-header-menu-container > li > a {display: block; line-height: 72px; height: 72px; font-size: 26px; color: #abc3d4; text-transform: uppercase; padding: 0 29px; font-family: 'Proxima-Nova-Condensed-Regular'; text-decoration: none;}
+.nt-header-menu-container > li > a:hover {color: #abc3d4; text-decoration: underline;}
 .nt-header-menu-container > li.active > a:hover,
 .nt-header-menu-container > li.active > a {background-color: #5ea1d1; color: #ffffff; text-decoration: none;}
 .nt-header-menu-container > li > ul {display: none;}
 .nt-header-menu-container > li.active > ul {display: block; list-style: none; background-color: #5ea1d1; position: absolute; left: 0; height: 41px; line-height: 41px; margin: 0; width: 100%; font-family: 'Proxima-Nova-Condensed-Regular';}
 .nt-header-menu-container > li.active > ul > li {display: inline-block; float: right; margin: 0 8px;}
-.nt-header-menu-container > li.active > ul > li a {color: #204865; font-size: 20px;}
-.nt-header-menu-container > li.active > ul > li a:hover {color: #ffffff; text-decoration: none;}
+.nt-header-menu-container > li.active > ul > li a {color: #204865; font-size: 20px; text-decoration: none;}
+.nt-header-menu-container > li.active > ul > li a:hover {text-decoration: underline;}
+.nt-header-menu-container > li.active > ul > li.active a {color: #ffffff; text-decoration: none;}
 
 .nt-sub-menu-temp-container {height: 41px;}
 
