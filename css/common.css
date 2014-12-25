@@ -14,6 +14,8 @@ a:focus {outline: none; cursor: pointer; color: #f13d0c; text-decoration: underl
 
 ._display_none {display: none;}
 ._position_relative {position: relative;}
+._position_static {position: static;}
+._position_fixed {position: fixed;}
 ._color_red {color: #f13d0c;}
 ._list-style_none {list-style: none;}
 
@@ -96,9 +98,11 @@ a:focus {outline: none; cursor: pointer; color: #f13d0c; text-decoration: underl
 .nt-tour:hover .nt-tour-content {border-color: #f13d0c;}
 .nt-hotel-info {background-color: rgba(255, 255, 255, 0.85); padding: 0 6px;}
 .nt-name-hotel {font-size: 12px; color: #4e4f52; font-family: Tahoma, Geneva, sans-serif; width: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; margin: 0;}
+
 .nt-hotel-info__stars-hotel {list-style: none; padding: 0; margin: 2px 0 0 0; height: 7px; line-height: 7px;}
 .nt-hotel-info__stars-hotel li {display: inline-block; background: url(../images/sprite.png) no-repeat -30px 0; width: 7px; height: 7px; line-height: 7px;}
 .nt-hotel-info__stars-hotel li.active {background-position: -30px -7px;}
+
 .nt-date-tour {font-family: Tahoma, Geneva, sans-serif; font-size: 10px; color: #4e4f52; margin: 0;}
 .nt-description-tour {position: absolute; bottom: 0; left: 0; right: 0; text-align: right;}
 .nt-price-tour {background-color: rgba(255, 255, 255, 0.85); border-radius: 4px 4px 0 0; margin-bottom: 0; display: inline-block; padding: 0 12px; font-size: 24px; height: 30px; color: #f13d0c; font-family: 'Proxima-Nova-Condensed-Regular';}
@@ -147,6 +151,19 @@ a:focus {outline: none; cursor: pointer; color: #f13d0c; text-decoration: underl
 .nt-hotel-stars li {display: inline-block; background: url(../images/sprite.png) no-repeat -39px -75px; width: 15px; height: 14px;}
 .nt-hotel-stars li.active {background-position: -24px -75px;}
 
+.nt-pop-die-container-height {height: 127px;}
+
+.nt-pop-die-container {height: 127px; padding-top: 18px; border-bottom: 10px solid #1f78b9; background-color: #5ea1d1; bottom: 0; left: 0; right: 0; z-index: 1000;}
+.nt-pop-die-container .nt-container {margin-bottom: 0;}
+.nt-pop-die__image {border: 3px solid #ffffff;}
+.nt-pop-die__description {margin-top: -25px; margin-left: 20px;}
+.nt-pop-die__description .nt-title {color: #ffffff;}
+
+.nt-pop-die__description .nt-hotel-stars li {background-position: -111px -79px;}
+.nt-pop-die__description .nt-hotel-stars li.active {background-position: -111px -65px;}
+
+.nt-pop-die__price {color: #ffffff; font-size: 20px; padding-left: 30px; line-height: 33px;}
+
 .nt-title-description {font-size: 16px; font-weight: bold;}
 .nt-hotel-short-description {margin-bottom: 20px;}
 
@@ -162,6 +179,10 @@ a:focus {outline: none; cursor: pointer; color: #f13d0c; text-decoration: underl
 .nt-tour-icons__transfer:before {background-position: 0 0; width: 49px;}
 .nt-tour-icons__nutrition:before {background-position: -102px 0; width: 28px;}
 
+.nt-up-button {background-color: #1f78b9; color: #ffffff; font-size: 20px; display: inline-block; padding: 5px 38px 0 38px; margin-top: 67px;}
+.nt-up-button:focus,
+.nt-up-button:hover {color: #ffffff; text-decoration: none;}
+
 div#offer_of_the_day_content .nt-btn,
 .nt-btn {border-radius: 0; border-width: 3px; font-size: 20px; font-family: Tahoma, Geneva, sans-serif; padding: 3px 24px; height: 40px; text-decoration: none;}
 div#offer_of_the_day_content .nt-btn-white,
@@ -176,6 +197,8 @@ div#offer_of_the_day_content .nt-btn-white:hover,
 /*.nt-subscribe-email-newsletter-container input:disabled {background-color: #fafafa;}*/
 
 div#offer_of_the_day_content .nt-btn {font-size: 16px; padding: 0 16px; height: 27px; line-height: 20px; margin-top: -38px; position: relative; z-index: 10;}
+
+.nt-pop-die__description .nt-btn {height: 33px; padding: 0 24px; margin-top: -9px;}
 
 .nt-btn-red {background-color: #f13d0c; border-color: #ffffff; color: #ffffff}
 .nt-btn-red:focus,

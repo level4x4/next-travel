@@ -18,6 +18,12 @@
 		});
 	};
 
+	$.fn.scrollToTop = function () {
+		$(this).removeAttr('href').on('click', function () {
+			$('html, body').animate({scrollTop: 0}, 'slow');
+		})
+	};
+
 	var classNames = {
 		ntSliderContainer: 'nt-slider-container',
 		ntHeaderMenuContainer: 'nt-header-menu-container',
@@ -27,6 +33,10 @@
 		ntBannerContainer: 'nt-banner-container',
 		ntHotelStars: 'nt-hotel-stars',
 		ntHotelInfoHotelStars: 'nt-hotel-info__stars-hotel',
+		ntPopDieContainer: 'nt-pop-die-container',
+		ntHotelShortDescription: 'nt-hotel-short-description',
+		ntFooter: 'nt-footer',
+		ntUpButton: 'nt-up-button',
 
 		ntSubscribeEmailNewsletter: 'nt-subscribe-email-newsletter',
 		ntSubscribeEmailNewsletterContainer: 'nt-subscribe-email-newsletter-container',
@@ -35,6 +45,8 @@
 		ntNewsletterContainerBtn: 'nt-newsletter-container__btn',
 		ntNewsletterContainerType: 'nt-newsletter-container__type',
 
+		positionStatic: '_position_static',
+		positionFixed: '_position_fixed',
 		displayNone: '_display_none'
 	};
 
@@ -62,7 +74,9 @@
 
 	var selectors = nt.buildSelectors(classNames, ids);
 
-	var indexHeaderSubMenu,
+	var posNtPopDieContainer,
+		posNtFooter,
+		indexHeaderSubMenu,
 		$ntHeaderMenuElement,
 		$ntNewsletterContainerEmail,
 		$ntNewsletterContainerName,
@@ -74,9 +88,17 @@
 		$ntHotelInfoHotelStars,
 		$ntSliderContainer,
 		$ntBannerContainer,
+		$ntPopDieContainer,
+		$ntHotelShortDescription,
+		$ntFooter,
+		$ntUpButton,
 		$ntHeaderSubMenu;
 
 	$(function(){
+		$ntFooter = $(selectors.ntFooter);
+		$ntUpButton = $(selectors.ntUpButton);
+		$ntPopDieContainer = $(selectors.ntPopDieContainer);
+		$ntHotelShortDescription = $(selectors.ntHotelShortDescription);
 		$ntHotelStars = $(selectors.ntHotelStars);
 		$ntHotelInfoHotelStars = $(selectors.ntHotelInfoHotelStars);
 		$ntHeaderMenuElement = $(selectors.ntHeaderMenuContainer).find('> li');
@@ -90,6 +112,12 @@
 		$ntSliderContainer = $(selectors.ntSliderContainer);
 		$ntBannerContainer = $(selectors.ntBannerContainer);
 
+		if ($ntPopDieContainer.exists()) {
+			posNtPopDieContainer = $ntHotelShortDescription.offset();
+			posNtFooter = $ntFooter.offset();
+			$ntUpButton.scrollToTop();
+		}
+
 		if ($ntHotelInfoHotelStars.exists()) {
 			$ntHotelInfoHotelStars.each(function(){
 				$(this).hotelStars();
@@ -97,7 +125,9 @@
 		}
 
 		if($ntHotelStars.exists()) {
-			$ntHotelStars.hotelStars();
+			$ntHotelStars.each(function(){
+				$(this).hotelStars();
+			});
 		}
 
 		$ntHeaderMenuElement.each(function(){
@@ -114,18 +144,18 @@
 			if ($this.hasClass(classNames.ntHeaderSubMenu)) {
 				if (indexHeaderSubMenu === thisIndex) {
 					$this.toggleClass('active');
-					$ntSubMenuTempContainer.toggleClass('_display_none');
+					$ntSubMenuTempContainer.toggleClass(classNames.displayNone);
 				} else {
 					indexHeaderSubMenu = thisIndex;
 					$ntHeaderMenuElement.removeClass('active');
 					$this.addClass('active');
-					$ntSubMenuTempContainer.removeClass('_display_none');
+					$ntSubMenuTempContainer.removeClass(classNames.displayNone);
 				}
 			} else {
 				indexHeaderSubMenu = thisIndex;
 				$ntHeaderMenuElement.removeClass('active');
 				$this.addClass('active');
-				$ntSubMenuTempContainer.addClass('_display_none');
+				$ntSubMenuTempContainer.addClass(classNames.displayNone);
 			}
 		});
 
@@ -186,6 +216,23 @@
 			}).fail(function () {
 				console.log('Fail load file widget_partner.js');
 			});
+		}
+	});
+
+	$(window).on('scroll', function(){
+		if ($ntPopDieContainer.exists()) {
+			var $this = $(this),
+				thisScrollTop = $this.scrollTop();
+			if ((thisScrollTop > posNtPopDieContainer.top + $ntPopDieContainer.height() && thisScrollTop <= (posNtFooter.top - thisScrollTop)) && $ntPopDieContainer.hasClass(classNames.positionStatic)) {
+				$ntPopDieContainer.fadeOut('fast', function() {
+					$(this).removeClass(classNames.positionStatic).addClass(classNames.positionFixed).fadeIn('fast');
+				});
+			}
+			if ((thisScrollTop <= posNtPopDieContainer.top || thisScrollTop >= (posNtFooter.top - thisScrollTop - $ntFooter.height())) && $ntPopDieContainer.hasClass(classNames.positionFixed)) {
+				$ntPopDieContainer.fadeOut('fast', function() {
+					$(this).removeClass(classNames.positionFixed).addClass(classNames.positionStatic).fadeIn('fast');
+				});
+			}
 		}
 	});
 
