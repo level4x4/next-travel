@@ -71,10 +71,10 @@ a:focus {outline: none; cursor: pointer; color: #f13d0c; text-decoration: underl
 .nt-slider li {float: left; position: relative;}
 
 .nt-nav-slider {width: 28px; height: 28px; display: inline-block; background: transparent url(../images/sprite.png) no-repeat; position: absolute; bottom: 52px; cursor: pointer;}
-.nt-nav-slider.nt-nav-slider-prev {background-position: 0 -47px; left: 59px;}
-.nt-nav-slider.nt-nav-slider-next {background-position: -28px -47px; left: 99px;}
-.nt-nav-slider.nt-nav-slider-prev:hover {background-position: 0 -19px;}
-.nt-nav-slider.nt-nav-slider-next:hover {background-position: -28px -19px;}
+.nt-nav-slider.nt-nav-slider-prev {background-position: -28px -47px; left: 99px;}
+.nt-nav-slider.nt-nav-slider-next {background-position: 0 -47px; left: 59px;}
+.nt-nav-slider.nt-nav-slider-prev:hover {background-position: -28px -19px;}
+.nt-nav-slider.nt-nav-slider-next:hover {background-position: 0 -19px;}
 
 .nt-container,
 .nt-recommended-container,

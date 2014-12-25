@@ -5,7 +5,7 @@
 	var classNames = {
 		sliderContent: 'slider-content',
 		sliderPages: 'slider-pages',
-
+		sliderContainer: 'slider-container',
 		active: 'active'
 	};
 
@@ -48,6 +48,7 @@
 
 			var $this = $(this);
 			var $sliderContainer = $this.find(selectors.sliderContent);
+			var widthContainer = $this.find(selectors.sliderContainer).width();
 			var $pagesContainer = $this.find(selectors.sliderPages);
 			var itemsTotal = $this.find(selectors.sliderContent).children().length;
 			var running = false;
@@ -79,7 +80,7 @@
 						window.clearInterval(intID);
 					}
 
-					leftIndent = (735 * settings.rotateBy * direction);
+					leftIndent = (widthContainer * settings.rotateBy * direction);
 
 					if (!dir) {
 						$sliderContainer.children(':last').after($sliderContainer.children().slice(0, settings.rotateBy).clone(true));
