@@ -9,8 +9,7 @@ a:focus {outline: none; cursor: pointer; color: #f13d0c; text-decoration: underl
 
 .container {width: 995px; padding: 0;}
 
-.nt-wrapper {height: auto !important; min-height: 100%;}
-.nt-bg-container {background: url(../images/bg.jpg) no-repeat center 106px; width: 100%; height: 100%;}
+.nt-wrapper {height: auto !important; min-height: 100%; background: url(../images/bg.jpg) no-repeat center 106px;}
 
 ._display_none {display: none;}
 ._position_relative {position: relative;}
@@ -151,6 +150,8 @@ a:focus {outline: none; cursor: pointer; color: #f13d0c; text-decoration: underl
 .nt-hotel-stars li {display: inline-block; background: url(../images/sprite.png) no-repeat -39px -75px; width: 15px; height: 14px;}
 .nt-hotel-stars li.active {background-position: -24px -75px;}
 
+.nt-order-tour-container {margin: -30px 0 -30px -40px;}
+
 .nt-pop-die-container-height {height: 127px;}
 
 .nt-pop-die-container {height: 127px; padding-top: 18px; border-bottom: 10px solid #1f78b9; background-color: #5ea1d1; bottom: 0; left: 0; right: 0; z-index: 1000;}
@@ -213,6 +214,13 @@ div#offer_of_the_day_content .nt-btn {font-size: 16px; padding: 0 16px; height: 
 .nt-form .nt-form-control {width: 298px; resize: none;}
 .nt-form__registration-label label {width: 300px; clear: both;}
 .nt-form__registration-label label span {text-align: right; display: inline-block; float: right;}
+
+.nt-order-tour-container .nt-form-control {width: 299px;}
+
+.nt-form .row .nt-form-control {width: 100%;}
+.nt-form .form-group.row {width: 330px;}
+
+.nt-order-tour-container .col-xs-6 {width: 142px; padding: 0; margin-left: 15px;}
 
 .nt-list-insurance {line-height: 24px;}
 .nt-list-insurance li:before {content: "— ";}
