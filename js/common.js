@@ -5,6 +5,19 @@
 		return this.length !== 0;
 	};
 
+	$.fn.hotelStars = function() {
+		var $li = $(this).find('li'),
+			i = 1,
+			countStar = $(this).data('stars');
+		$li.each(function(){
+			if (i > countStar) {
+				return false;
+			}
+			i++;
+			$(this).addClass('active');
+		});
+	};
+
 	var classNames = {
 		ntSliderContainer: 'nt-slider-container',
 		ntHeaderMenuContainer: 'nt-header-menu-container',
@@ -12,6 +25,8 @@
 		ntSubMenuTempContainer: 'nt-sub-menu-temp-container',
 		ntPartnerContainer: 'nt-partner-container',
 		ntBannerContainer: 'nt-banner-container',
+		ntHotelStars: 'nt-hotel-stars',
+		ntHotelInfoHotelStars: 'nt-hotel-info__stars-hotel',
 
 		ntSubscribeEmailNewsletter: 'nt-subscribe-email-newsletter',
 		ntSubscribeEmailNewsletterContainer: 'nt-subscribe-email-newsletter-container',
@@ -55,9 +70,15 @@
 		$ntNewsletterContainerType,
 		$ntSubscribeEmailNewsletter,
 		$ntSubMenuTempContainer,
+		$ntHotelStars,
+		$ntHotelInfoHotelStars,
+		$ntSliderContainer,
+		$ntBannerContainer,
 		$ntHeaderSubMenu;
 
 	$(function(){
+		$ntHotelStars = $(selectors.ntHotelStars);
+		$ntHotelInfoHotelStars = $(selectors.ntHotelInfoHotelStars);
 		$ntHeaderMenuElement = $(selectors.ntHeaderMenuContainer).find('> li');
 		$ntNewsletterContainerEmail = $(selectors.ntNewsletterContainerEmail);
 		$ntNewsletterContainerName = $(selectors.ntNewsletterContainerName);
@@ -66,6 +87,18 @@
 		$ntSubscribeEmailNewsletter = $(selectors.ntSubscribeEmailNewsletter);
 		$ntHeaderSubMenu = $(selectors.ntHeaderSubMenu);
 		$ntSubMenuTempContainer = $(selectors.ntSubMenuTempContainer);
+		$ntSliderContainer = $(selectors.ntSliderContainer);
+		$ntBannerContainer = $(selectors.ntBannerContainer);
+
+		if ($ntHotelInfoHotelStars.exists()) {
+			$ntHotelInfoHotelStars.each(function(){
+				$(this).hotelStars();
+			});
+		}
+
+		if($ntHotelStars.exists()) {
+			$ntHotelStars.hotelStars();
+		}
 
 		$ntHeaderMenuElement.each(function(){
 			if ($(this).hasClass('active')) {
@@ -132,14 +165,18 @@
 		subscribeEmailNewsletter($ntNewsletterContainerEmail);
 
 		$.getScript('js/slider.js').done(function(){
-			$(selectors.ntSliderContainer).slider({
-				btnNext: '.nt-nav-slider-next',
-				btnPrev: '.nt-nav-slider-prev'
-			});
-			$(selectors.ntBannerContainer).slider({
-				btnNext: '.nt-nav-banner-slider-next',
-				btnPrev: '.nt-nav-banner-slider-prev'
-			});
+			if ($ntSliderContainer.exists()) {
+				$ntSliderContainer.slider({
+					btnNext: '.nt-nav-slider-next',
+					btnPrev: '.nt-nav-slider-prev'
+				});
+			}
+			if ($ntBannerContainer.exists()) {
+				$ntBannerContainer.slider({
+					btnNext: '.nt-nav-banner-slider-next',
+					btnPrev: '.nt-nav-banner-slider-prev'
+				});
+			}
 		}).fail(function(){
 			console.log('Fail load file slider.js');
 		});
