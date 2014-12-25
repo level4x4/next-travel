@@ -113,7 +113,13 @@ a:focus {outline: none; cursor: pointer; color: #f13d0c; text-decoration: underl
 .nt-banner-slider li a:hover {background-color: #fafafa;}
 .nt-banner-slider li a:hover span {text-decoration: underline;}
 
-.nt-nav-banner-slider {}
+.nt-contact-description {margin-bottom: 15px;}
+.nt-contact-description p {margin-bottom: 0;}
+.nt-contact-description p span {display: inline-block; width: 70px;}
+
+.nt-google-map {margin-left: -27px; margin-top: 15px;}
+
+.nt-job-title {color: #3f7eb7; font-size: 18px; font-family: 'Proxima-Nova-Condensed-Regular';}
 
 .nt-left-container {width: 700px;}
 .nt-right-container {width: 224px;}
