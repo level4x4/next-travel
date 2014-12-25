@@ -70,11 +70,19 @@ a:focus {outline: none; cursor: pointer; color: #f13d0c; text-decoration: underl
 .nt-slider-content {list-style: none; width: 9999px; clear: both; padding: 0;}
 .nt-slider li {float: left; position: relative;}
 
-.nt-nav-slider {width: 28px; height: 28px; display: inline-block; background: transparent url(../images/sprite.png) no-repeat; position: absolute; bottom: 52px; cursor: pointer;}
+.nt-nav-slider,
+.nt-nav-banner-slider {width: 28px; height: 28px; display: inline-block; background: transparent url(../images/sprite.png) no-repeat; position: absolute; bottom: 52px; cursor: pointer;}
 .nt-nav-slider.nt-nav-slider-prev {background-position: -28px -47px; left: 99px;}
 .nt-nav-slider.nt-nav-slider-next {background-position: 0 -47px; left: 59px;}
 .nt-nav-slider.nt-nav-slider-prev:hover {background-position: -28px -19px;}
 .nt-nav-slider.nt-nav-slider-next:hover {background-position: 0 -19px;}
+
+
+.nt-nav-banner-slider {top: 25px;}
+.nt-nav-banner-slider.nt-nav-banner-slider-prev {background-position: -84px -65px; right: 27px;}
+.nt-nav-banner-slider.nt-nav-banner-slider-next {background-position: -56px -65px; left: 27px;}
+.nt-nav-banner-slider.nt-nav-banner-slider-prev:hover {background-position: -28px -19px;}
+.nt-nav-banner-slider.nt-nav-banner-slider-next:hover {background-position: 0 -19px;}
 
 .nt-container,
 .nt-recommended-container,
@@ -99,8 +107,8 @@ a:focus {outline: none; cursor: pointer; color: #f13d0c; text-decoration: underl
 .nt-title {text-transform: uppercase; font-weight: normal; font-size: 30px; color: #3f7eb7; font-family: 'Proxima-Nova-Condensed-Regular';}
 
 .nt-banner-container {border-top: 1px solid; border-bottom: 1px solid; border-color: #dcdcdc; height: 79px; width: 100%; position: relative; overflow: hidden;}
-.nt-banner-slider {padding: 0; margin: 0; clear: both; overflow: hidden; list-style: none;}
-.nt-banner-slider li {float: left; width: 100%;}
+.nt-banner-slider {padding: 0; margin: 0; clear: both; overflow: hidden; list-style: none; width: 9999px;}
+.nt-banner-slider li {float: left; width: 995px; position: relative;}
 .nt-banner-slider li a {display: inline-block; width: 100%; height: 77px; line-height: 79px; text-align: center; font-size: 35px; color: #1e7abb; font-family: 'Proxima-Nova-Condensed-Regular';}
 .nt-banner-slider li a:hover {background-color: #fafafa;}
 .nt-banner-slider li a:hover span {text-decoration: underline;}

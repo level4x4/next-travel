@@ -11,6 +11,7 @@
 		ntHeaderSubMenu: 'nt-header-sub-menu',
 		ntSubMenuTempContainer: 'nt-sub-menu-temp-container',
 		ntPartnerContainer: 'nt-partner-container',
+		ntBannerContainer: 'nt-banner-container',
 
 		ntSubscribeEmailNewsletter: 'nt-subscribe-email-newsletter',
 		ntSubscribeEmailNewsletterContainer: 'nt-subscribe-email-newsletter-container',
@@ -134,6 +135,10 @@
 			$(selectors.ntSliderContainer).slider({
 				btnNext: '.nt-nav-slider-next',
 				btnPrev: '.nt-nav-slider-prev'
+			});
+			$(selectors.ntBannerContainer).slider({
+				btnNext: '.nt-nav-banner-slider-next',
+				btnPrev: '.nt-nav-banner-slider-prev'
 			});
 		}).fail(function(){
 			console.log('Fail load file slider.js');
