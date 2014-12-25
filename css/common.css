@@ -210,7 +210,7 @@ div#offer_of_the_day_content .nt-btn {font-size: 16px; padding: 0 16px; height: 
 .nt-btn-tukan:before {content: ""; width: 92px; height: 65px; display: inline-block; background: transparent url(../images/sprite.png) no-repeat -56px 0; position: absolute; top: -63px; left: 0;}
 
 .nt-form {margin-left: 40px; margin-bottom: 30px; margin-top: 30px;}
-.nt-form-control {border-radius: 0; border-color: #b1b1b1;}
+.nt-form-control {border-radius: 0; border-color: #b1b1b1; resize: none;}
 .nt-form .nt-form-control {width: 298px; resize: none;}
 .nt-form__registration-label label {width: 300px; clear: both;}
 .nt-form__registration-label label span {text-align: right; display: inline-block; float: right;}
@@ -219,6 +219,15 @@ div#offer_of_the_day_content .nt-btn {font-size: 16px; padding: 0 16px; height: 
 
 .nt-form .row .nt-form-control {width: 100%;}
 .nt-form .form-group.row {width: 330px;}
+
+.nt-btn-calendar,
+.nt-btn-calendar:active,
+.nt-btn-calendar:focus {background: transparent url(../images/bg-calendar-btn.png) no-repeat center; height: 34px; width: 40px; outline: none;}
+
+.nt-informer-container {background-color: #5ea1d1; padding: 47px 30px; width: 100%; position: relative;}
+.nt-informer-container:before {content: ""; display: block; width: 0; height: 0; border-top: 0 solid transparent; border-right: 55px solid #5ea1d1; border-bottom: 30px solid transparent; position: absolute; z-index: 1; left: -55px; top: 10px;}
+.nt-informer__title {font-size: 18px; color: #ffffff; font-family: 'Proxima-Nova-Condensed-Regular'; line-height: normal;}
+.nt-informer__text {font-size: 12px; color: #204865; margin-top: 15px;}
 
 .nt-order-tour-container .col-xs-6 {width: 142px; padding: 0; margin-left: 15px;}
 
