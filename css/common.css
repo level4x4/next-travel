@@ -145,6 +145,7 @@ a:focus {outline: none; cursor: pointer; color: #f13d0c; text-decoration: underl
 
 .nt-exchange-rate {position: absolute; color: #a9cfea; font-size: 14px; font-family: 'Proxima-Nova-Condensed-Regular'; right: 27px; top: 42px;}
 .nt-exchange-rate p {margin: 0;}
+.nt-exchange-rate p span {display: inline-block; text-align: right; width: 30px;}
 
 .nt-hotel-stars {list-style: none; padding: 0; margin-top: -15px;}
 .nt-hotel-stars li {display: inline-block; background: url(../images/sprite.png) no-repeat -39px -75px; width: 15px; height: 14px;}
