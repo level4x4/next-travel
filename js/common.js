@@ -34,6 +34,7 @@
 		ntHotelStars: 'nt-hotel-stars',
 		ntHotelInfoHotelStars: 'nt-hotel-info__stars-hotel',
 		ntPopDieContainer: 'nt-pop-die-container',
+		ntPopDieContainerHeight: 'nt-pop-die-container-height',
 		ntHotelShortDescription: 'nt-hotel-short-description',
 		ntFooter: 'nt-footer',
 		ntUpButton: 'nt-up-button',
@@ -45,6 +46,7 @@
 		ntNewsletterContainerBtn: 'nt-newsletter-container__btn',
 		ntNewsletterContainerType: 'nt-newsletter-container__type',
 
+		positionFooter: '_position_footer',
 		positionStatic: '_position_static',
 		positionFixed: '_position_fixed',
 		displayNone: '_display_none'
@@ -89,6 +91,7 @@
 		$ntSliderContainer,
 		$ntBannerContainer,
 		$ntPopDieContainer,
+		$ntPopDieContainerHeight,
 		$ntHotelShortDescription,
 		$ntFooter,
 		$ntUpButton,
@@ -98,6 +101,7 @@
 		$ntFooter = $(selectors.ntFooter);
 		$ntUpButton = $(selectors.ntUpButton);
 		$ntPopDieContainer = $(selectors.ntPopDieContainer);
+		$ntPopDieContainerHeight = $(selectors.ntPopDieContainerHeight);
 		$ntHotelShortDescription = $(selectors.ntHotelShortDescription);
 		$ntHotelStars = $(selectors.ntHotelStars);
 		$ntHotelInfoHotelStars = $(selectors.ntHotelInfoHotelStars);
@@ -219,18 +223,27 @@
 		}
 	});
 
-	$(window).on('scroll', function(){
+	$(document).on('scroll', function(){
 		if ($ntPopDieContainer.exists()) {
 			var $this = $(this),
 				thisScrollTop = $this.scrollTop();
-			if ((thisScrollTop > posNtPopDieContainer.top + $ntPopDieContainer.height() && thisScrollTop <= (posNtFooter.top - thisScrollTop)) && $ntPopDieContainer.hasClass(classNames.positionStatic)) {
-				$ntPopDieContainer.fadeOut('fast', function() {
+			if (thisScrollTop >= (posNtPopDieContainer.top + $ntHotelShortDescription.outerHeight()) && $ntPopDieContainer.hasClass(classNames.positionStatic)) {
+				$ntPopDieContainer.fadeIn('fast', function() {
 					$(this).removeClass(classNames.positionStatic).addClass(classNames.positionFixed).fadeIn('fast');
 				});
 			}
-			if ((thisScrollTop <= posNtPopDieContainer.top || thisScrollTop >= (posNtFooter.top - thisScrollTop - $ntFooter.height())) && $ntPopDieContainer.hasClass(classNames.positionFixed)) {
+			if (thisScrollTop <= (posNtPopDieContainer.top + $ntHotelShortDescription.outerHeight()) && $ntPopDieContainer.hasClass(classNames.positionFixed)) {
 				$ntPopDieContainer.fadeOut('fast', function() {
-					$(this).removeClass(classNames.positionFixed).addClass(classNames.positionStatic).fadeIn('fast');
+					$(this).removeClass(classNames.positionFixed).addClass(classNames.positionStatic).fadeOut('fast');
+				});
+			}
+			if (thisScrollTop >= (posNtFooter.top  - $ntFooter.outerHeight() - $ntPopDieContainerHeight.outerHeight() - 200)) {
+				$ntPopDieContainer.fadeIn('fast', function() {
+					$(this).addClass(classNames.positionFooter).fadeIn('fast');
+				});
+			} else {
+				$ntPopDieContainer.fadeIn('fast', function() {
+					$(this).removeClass(classNames.positionFooter).fadeIn('fast');
 				});
 			}
 		}
