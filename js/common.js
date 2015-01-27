@@ -227,17 +227,8 @@
 		if ($ntPopDieContainer.exists()) {
 			var $this = $(this),
 				thisScrollTop = $this.scrollTop();
-			if (thisScrollTop >= (posNtPopDieContainer.top + $ntHotelShortDescription.outerHeight()) && $ntPopDieContainer.hasClass(classNames.positionStatic)) {
-				$ntPopDieContainer.fadeIn('fast', function() {
-					$(this).removeClass(classNames.positionStatic).addClass(classNames.positionFixed).fadeIn('fast');
-				});
-			}
-			if (thisScrollTop <= (posNtPopDieContainer.top + $ntHotelShortDescription.outerHeight()) && $ntPopDieContainer.hasClass(classNames.positionFixed)) {
-				$ntPopDieContainer.fadeOut('fast', function() {
-					$(this).removeClass(classNames.positionFixed).addClass(classNames.positionStatic).fadeOut('fast');
-				});
-			}
-			if (thisScrollTop >= (posNtFooter.top  - $ntFooter.outerHeight() - $ntPopDieContainerHeight.outerHeight() - 200)) {
+
+			if ((thisScrollTop + $(window).height()) === $this.height()) {
 				$ntPopDieContainer.fadeIn('fast', function() {
 					$(this).addClass(classNames.positionFooter).fadeIn('fast');
 				});
@@ -246,6 +237,18 @@
 					$(this).removeClass(classNames.positionFooter).fadeIn('fast');
 				});
 			}
+
+			if (thisScrollTop >= (posNtPopDieContainer.top + $ntHotelShortDescription.outerHeight()) && $ntPopDieContainer.hasClass(classNames.positionStatic)) {
+				$ntPopDieContainer.fadeIn('fast', function () {
+					$(this).removeClass(classNames.positionStatic).addClass(classNames.positionFixed).fadeIn('fast');
+				});
+			}
+			if (thisScrollTop <= (posNtPopDieContainer.top + $ntHotelShortDescription.outerHeight()) && $ntPopDieContainer.hasClass(classNames.positionFixed)) {
+				$ntPopDieContainer.fadeIn('fast', function () {
+					$(this).removeClass(classNames.positionFixed).addClass(classNames.positionStatic).fadeIn('fast');
+				});
+			}
+
 		}
 	});
 
