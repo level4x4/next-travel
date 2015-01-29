@@ -15,7 +15,7 @@ a:focus {outline: none; cursor: pointer; color: #f13d0c; text-decoration: underl
 ._position_relative {position: relative;}
 ._position_static {position: static;}
 ._position_fixed {position: fixed;}
-._position_footer {bottom: 164px !important;}
+._position_footer {position: static !important;}
 ._color_red {color: #f13d0c;}
 ._list-style_none {list-style: none;}
 

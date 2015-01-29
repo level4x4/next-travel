@@ -228,7 +228,8 @@
 			var $this = $(this),
 				thisScrollTop = $this.scrollTop();
 
-			if ((thisScrollTop + $(window).height()) === $this.height()) {
+
+			if ((thisScrollTop + $(window).height()) >= ($this.height() - $ntFooter.outerHeight())) {
 				$ntPopDieContainer.fadeIn('fast', function() {
 					$(this).addClass(classNames.positionFooter).fadeIn('fast');
 				});
@@ -237,6 +238,7 @@
 					$(this).removeClass(classNames.positionFooter).fadeIn('fast');
 				});
 			}
+
 
 			if (thisScrollTop >= (posNtPopDieContainer.top + $ntHotelShortDescription.outerHeight()) && $ntPopDieContainer.hasClass(classNames.positionStatic)) {
 				$ntPopDieContainer.fadeIn('fast', function () {
